@@ -1,25 +1,16 @@
 {%extends 'base.html' %}
  {%block content%}
 <h1>Updating Songs</h1>
-<form class='addsong' action="{{ url_for('updatefield2')}}" method="post">
-    
+<form class='addsong' action="{{ url_for('update')}}" method="post">
+    <label for="songID">Enter songID to be updated</label>
+    <input type="text" name="songID" placeholder="songID" value=""required>
     <label for="ufield">Enter the field to be updated</label> 
     <input type="text" id="fname" name="ufield" placeholder="Title, Artist or Genre" value=""required><br>
-   
-
-   <button class='addpage'  type="submit">Submit</button>
-</form>
-<form class='addsong' action="{{ url_for('update')}}" method="post">
-    
-    <label for="">Enter new {{updatefield}} name</label>
-    <input type="text" id="fname" name="fieldvalue" placeholder="{{updatefield}}" value=""required><br>
-    
-    
-   
-
-  
+    <label for="">Enter new value</label>
+    <input type="text" id="fname" name="fieldvalue" placeholder="new value" value=""required><br>
 
    <button class='addpage'  type="submit">Update song</button>
 </form>
+
 
 {%endblock content%}

@@ -11,7 +11,8 @@ def delete():
     idField = input("Enter the songID of the song to be deleted: ")
     # Method 1
     # DELETE FROM songs WHERE songID=1, OR 2, OR 4...
-    cursor.execute("DELETE FROM songs WHERE songID=" + idField)
+    cursor.execute(f"DELETE FROM songs WHERE songID={idField}" )
+    cursor.execute("DELETE FROM songs WHERE songID="+idField ) #this line is also working
     conn.commit()
     print(
         f"Record {idField} deleted from Songs Table"

@@ -46,35 +46,29 @@ def append():
     # return render_template("index.html", prediction_text = "The flower species is {}".format(prediction))
     return render_template("list.html", songlist=f"{title} added to Songs Table", read_songs = songs)
 
-@flask_app.route("/updatepage", methods = ["POST", 'GET'] )
-def updatepage():
+# @flask_app.route("/updatepage", methods = ["POST", 'GET'] )
+# def updatepage():
     
 
 
-    return render_template("update.html")
+#     return render_template("update.html")
 
 @flask_app.route("/updatefield1", methods = ["POST", 'GET'] )
 def updatefield1():
-    songID = request.form["songID"]
     
-    
-    
-
-    
-
-
     return render_template("updating.html")
 @flask_app.route("/updatefield2", methods = ["POST", 'GET'] )
 def updatefield2():
-    updatefield = request.form["ufield"]
-    
+    songID = request.form["songID"]
+    field = request.form["ufield"]
+    updatefield=field.title()
     
     
 
     
 
 
-    return render_template("updating.html", updatefield=updatefield)
+    return render_template("updating.html", updatefield=updatefield, songID=songID)
 
 @flask_app.route("/update" , methods=['POST' , 'GET'])
 def update():
@@ -83,12 +77,13 @@ def update():
     fieldValue=request.form['fieldvalue']
     #idField = request.form.get("songID")
     fieldValue = "'" + fieldValue +"'"
-    cursor.execute("UPDATE songs SET {fieldName.title()} = {fieldValue} WHERE songID = {songID} ")
+    cursor.execute(f"UPDATE songs SET {fieldName1.title()} = {fieldValue} WHERE songID = {idField}")
     conn.commit()
     songs=readSongs.read()
 
 
     return render_template("list.html", updateMessage=f"The new value entered is {fieldValue}", read_songs=songs)
+
 @flask_app.route("/deletepage", methods = ["POST", 'GET'] )
 def deletereq():
     
