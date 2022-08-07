@@ -1,0 +1,8 @@
+{%extends 'base.html' %}
+ {%block content%}
+ <h1>Deleting Songs</h1>
+ <form class='addsong' action="{{ url_for('delete')}}" method='post'>
+    <input type="text" id="fname" name="songID" placeholder="Enter Song ID" value=""required><br>
+<button class='addpage'  type="submit">Delete Song</button>
+</form>
+{%endblock content%}

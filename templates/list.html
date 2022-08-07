@@ -1,0 +1,38 @@
+{%extends 'base.html' %}
+
+ {%block content%}
+ <h1>List of Songs</h1>
+ <h2>{{songlist}}</h2>
+ <h2>{{deleteMessage}}</h2>
+ <h2>{{updateMessage}}</h2>
+ {% for s in read_songs %}
+   <ul>
+    <li>{{s}}</li>
+   </ul>
+   
+{%endfor%}
+<!-- <button type="submit" formaction="{{ url_for('Home')}}" method="post" >Menu</button> -->
+<div class="goback"><a class="goback" href="{{url_for('Home')}}">Main Menu</a></div>
+
+{%endblock content%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+{%extends 'base.html' %}
+ {%block content%}
+ <h1>Adding New Songs</h1>
+ <form class='addsong' action="{{ url_for('append')}}" method="post">
+    <input type="text" id="fname" name="title" placeholder="Enter Song Title" value=""required>
+    <input type="text" id="lname" name="artist" placeholder="Enter Artist name" value=""required>
+    <input type="text" id="fname" name="genre" placeholder="Enter song Genre" value=""required><br>
+    
+
+    <button class='addpage'  type="submit">Add Song</button>
+ </form>
+{%endblock content%}
