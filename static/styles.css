@@ -22,6 +22,7 @@ button {
     color: antiquewhite;
     font-weight: 600;
     border: 3px peachpuff solid;
+    background-color: #0f6372dc;
 }
 /* why is the colour only affecting the printed songs and nothing more */
 
@@ -66,3 +67,34 @@ form.addsong{
     font-size: 35px;
 }
 
+
+
+@media only screen and (max-width: 600px) {
+    .base,
+    .addsong input, 
+    .addsong label {
+        width:50%;
+
+    }
+    button,
+    button.addpage,
+    .goback {
+        width: 150px;
+    }
+  }
+  @media only screen and (max-width: 300px) {
+    .base,
+    .addsong input, 
+    .addsong label {
+        width:50%;
+
+    }
+    button,
+    button.addpage,
+    .goback {
+        width: 50px;
+    }
+    ul li a{
+        font-size: 10px;
+    }
+  }
